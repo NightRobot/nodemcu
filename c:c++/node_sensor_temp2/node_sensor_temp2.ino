@@ -24,7 +24,7 @@ DHT dht2(DHTPIN2, DHTTYPE);
 //setting static ip address
 //sensor 1,2 ip 192.168.1.141
 //sensor 3,4 ip 192.168.1.142
-IPAddress local_ip = {192, 168, 1, 142};
+IPAddress local_ip = {192, 168, 1, 152};
 IPAddress gateway = {192, 168, 1, 1};
 IPAddress subnet = {255, 255, 255, 0};
 

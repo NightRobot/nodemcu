@@ -24,7 +24,7 @@ DHT dht2(DHTPIN2, DHTTYPE);
 //setting static ip address
 //sensor 1,2 ip 192.168.1.141
 //sensor 3,4 ip 192.168.1.142
-IPAddress local_ip = {192, 168, 1, 142};
+IPAddress local_ip = {192, 168, 1, 141};
 IPAddress gateway = {192, 168, 1, 1};
 IPAddress subnet = {255, 255, 255, 0};
 
@@ -62,7 +62,7 @@ void loop() {
       //sensor sentry 1
       if (isnan(t1) || isnan(h1)) {
         failed = true;
-        Serial.println("Error sensor 3");
+        Serial.println("Error sensor 1");
         delay(1000);
       } else {
         failed = false;
@@ -79,12 +79,12 @@ void loop() {
         datamassage += t1;
         datamassage += ",humid=";
         datamassage += h1;
-        send_data(host, database , "3", datamassage);
+        send_data(host, database , "1", datamassage);
       }
       //sensor sentry 2
       if (isnan(t2) || isnan(h2)) {
         failed = true;
-        Serial.println("Error sensor 4");
+        Serial.println("Error sensor 2");
         delay(1000);
       } else {
         failed = false;
@@ -101,7 +101,7 @@ void loop() {
         datamassage += t2;
         datamassage += ",humid=";
         datamassage += h2;
-        send_data(host, database , "4", datamassage);
+        send_data(host, database , "2", datamassage);
       }
     } else {
       Serial.println("WiFi not connected!");
